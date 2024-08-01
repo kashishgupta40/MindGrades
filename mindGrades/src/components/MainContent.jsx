@@ -1,101 +1,68 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const MainContent = () => {
-    const [posts, setPosts] = useState([
-        {
-            id: 1,
-            author: "Rahul Singh",
-            time: "2 hours ago",
-            title: "Preparation Strategy",
-            content: "Lorem ipsum dolor sit amet consectetur. Vitae vel sed non luctus ipsum amet mattis nulla sagittis. Ultricies consectetur vitae bibendum volutpat at.",
-            likes: 100,
-            comments: 13,
-            shares: 25,
-            newComment: ""
-        },
-        // Add more posts if needed
-    ]);
-
-    const handleLike = (postId) => {
-        setPosts(posts.map(post => 
-            post.id === postId ? { ...post, likes: post.likes + 1 } : post
-        ));
-    };
-
-    const handleCommentChange = (e, postId) => {
-        const { value } = e.target;
-        setPosts(posts.map(post =>
-            post.id === postId ? { ...post, newComment: value } : post
-        ));
-    };
-
-    const handleCommentSubmit = (postId) => {
-        // This would be where you handle submitting the comment to a backend or state
-        setPosts(posts.map(post =>
-            post.id === postId ? { ...post, comments: post.comments + 1, newComment: "" } : post
-        ));
-    };
-
-    const handleShare = (postId) => {
-        setPosts(posts.map(post => 
-            post.id === postId ? { ...post, shares: post.shares + 1 } : post
-        ));
-    };
-
+    
     return (
-        <div className="pt-20 pl-32 pr-8">
+        <div className="pt-8 pl-32 pr-4">
             <div className="flex justify-between items-start">
             <div class="container mx-auto">
-  <h1 class="text-3xl font-bold mb-4">Community</h1>
-
-  <div class="flex justify-center mb-4">
-    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+  <h1 class="text-3xl font-bold font-Satoshi-Variable mb-4">Community</h1>
+   
+   <div>
+  <div class="flex justify-start mb-4">
+    <button class="bg-white-200 hover:text-blue-700 text-gray-700  py-2 px-4 border-2 border-blue-600  rounded-full inline-flex items-center">
       <span>All</span>
     </button>
-    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-2">
+    <button class="bg-white-200 hover:text-blue-700 text-gray-700  py-2 px-4 border-2 border-blue-600  rounded-full inline-flex items-center ml-2">
       <span>Preparation Strategy</span>
     </button>
-    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-2">
+    <button class="bg-white-200 hover:text-blue-700 text-gray-700  py-2 px-4 border-2 border-blue-600  rounded-full inline-flex items-center ml-2">
       <span>Interview Experience</span>
     </button>
-    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-2">
-      <img src="" />
-    </button>
+
   </div>
+    <div class="flex justify-end mb-4">
+  <button class=" hover:bg-gray-300  py-2 px-4 rounded inline-flex  ml-2">
+      <img src=".\images\write.png" alt="write" />
+    </button>
+    </div>
+    </div>
+
+    <hr className='my-2 border-gray-300' />
 
   <div class="grid grid-cols-1 gap-4">
-    <div class="bg-white rounded-lg shadow-md p-4">
+    <div class="border-2 border-blue-700 rounded-lg shadow-md p-4">
       <div class="flex items-center mb-2">
-        <div class="bg-blue-500 rounded-full text-white font-bold text-sm px-2 py-1 mr-2">A</div>
+        <div class="bg-orange-500 rounded-full text-white font-bold text-sm px-2 py-1 mr-2">A</div>
         <div>
           <h2 class="text-lg font-bold mb-1">Rahul Singh</h2>
           <p class="text-gray-600 text-sm">2 hours ago</p>
         </div>
         <div class="ml-auto">
-          <span class="text-gray-600 text-sm">• 125</span>
+          <span class="text-gray-600 text-sm"><img src=".\images\Eye.png" /> 125</span>
         </div>
       </div>
 
       <div class="mb-2">
-        <h3 class="text-xl font-bold mb-1">Preparation Strategy</h3>
+        <h3 class="text-xl font-bold mb-1"> <img src=".\images\bluedot.png" /> Preparation Strategy</h3>
         <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur. Vitae vel sed non luctus ipsum amet mattis nulla sagittis. Ultricies consectetur vitae bibendum volutpat at. Odio ut urna risus cras nunc facilisis a ipsum.</p>
       </div>
 
       <div class="flex items-center">
-        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2">
+        <button class="bg-orange-200 hover:bg-gray-300 text-orange-800 font-bold py-2 px-4 rounded-full inline-flex items-center mr-2">
           <span>Strategy</span>
         </button>
-        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+        <button class="bg-orange-200 hover:bg-gray-300 text-orange-800 font-bold py-2 px-4 rounded-full inline-flex items-center">
           <span>Preparation</span>
         </button>
       </div>
 
       <div class="flex items-center mt-2">
-        <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4m5-11.677l-3-3m0 0l-3-3m3 3l3 3"></path></svg>
+        <img src=".\images\Square Arrow Up.svg" />
         <span class="text-gray-600 text-sm">100</span>
-        <svg class="w-4 h-4 text-gray-400 mr-2 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <img src=".\images\ArrowDown.svg" />
         <span class="text-gray-600 text-sm">13</span>
-        <svg class="w-4 h-4 text-gray-400 mr-2 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9 9 0 01-9-8 9 9 0 019-8z"></path></svg>
+        <img src=".\images\Chat Line.svg" />
         <span class="text-gray-600 text-sm">25</span>
       </div>
 
@@ -104,38 +71,38 @@ const MainContent = () => {
       </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow-md p-4">
+    <div class="border-2 border-blue-700 rounded-lg shadow-md p-4">
       <div class="flex items-center mb-2">
-        <div class="bg-blue-500 rounded-full text-white font-bold text-sm px-2 py-1 mr-2">A</div>
+        <div class="bg-orange-500 rounded-full text-white font-bold text-sm px-2 py-1 mr-2">A</div>
         <div>
           <h2 class="text-lg font-bold mb-1">Rahul Singh</h2>
           <p class="text-gray-600 text-sm">2 hours ago</p>
         </div>
         <div class="ml-auto">
-          <span class="text-gray-600 text-sm">• 125</span>
+          <span class="text-gray-600 text-sm"><img src=".\images\Eye.png" /> 125</span>
         </div>
       </div>
 
       <div class="mb-2">
-        <h3 class="text-xl font-bold mb-1">Preparation Strategy</h3>
+        <h3 class="text-xl font-bold mb-1"><img src=".\images\bluedot.png" />Preparation Strategy</h3>
         <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur. Vitae vel sed non luctus ipsum amet mattis nulla sagittis. Ultricies consectetur vitae bibendum volutpat at. Odio ut urna risus cras nunc facilisis a ipsum.</p>
       </div>
 
       <div class="flex items-center">
-        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2">
+        <button class="bg-orange-200 hover:bg-gray-300 text-orange-800 font-bold py-2 px-4 rounded-full inline-flex items-center mr-2">
           <span>Strategy</span>
         </button>
-        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+        <button class="bg-orange-200 hover:bg-gray-300 text-orange-800 font-bold py-2 px-4 rounded-full inline-flex items-center">
           <span>Preparation</span>
         </button>
       </div>
 
       <div class="flex items-center mt-2">
-        <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4m5-11.677l-3-3m0 0l-3-3m3 3l3 3"></path></svg>
+       <img src=".\images\Square Arrow Up.svg" />
         <span class="text-gray-600 text-sm">100</span>
-        <svg class="w-4 h-4 text-gray-400 mr-2 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <img src=".\images\ArrowDown.svg" />
         <span class="text-gray-600 text-sm">13</span>
-        <svg class="w-4 h-4 text-gray-400 mr-2 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9 9 0 01-9-8 9 9 0 019-8z"></path></svg>
+        <img src=".\images\Chat Line.svg" />
         <span class="text-gray-600 text-sm">25</span>
       </div>
 
@@ -152,30 +119,30 @@ const MainContent = () => {
           <p class="text-gray-600 text-sm">2 hours ago</p>
         </div>
         <div class="ml-auto">
-          <span class="text-gray-600 text-sm">• 120</span>
+          <span class="text-gray-600 text-sm"><img src=".\images\Eye.png" /> 120</span>
         </div>
       </div>
 
       <div class="mb-2">
-        <h3 class="text-xl font-bold mb-1">Preparation Strategy</h3>
+        <h3 class="text-xl font-bold mb-1"><img src=".\images\bluedot.png" />Preparation Strategy</h3>
         <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur. Vitae vel sed non luctus ipsum amet mattis nulla sagittis. Ultricies consectetur vitae bibendum volutpat at. Odio ut urna risus cras nunc facilisis a ipsum.</p>
       </div>
 
       <div class="flex items-center">
-        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2">
+        <button class="bg-orange-200 hover:bg-gray-300 text-orange-800 font-bold py-2 px-4 rounded-full inline-flex items-center mr-2">
           <span>Strategy</span>
         </button>
-        <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+        <button class="bg-orange-200 hover:bg-gray-300 text-orange-800 font-bold py-2 px-4 rounded-full inline-flex items-center">
           <span>Preparation</span>
         </button>
       </div>
 
       <div class="flex items-center mt-2">
-        <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4m5-11.677l-3-3m0 0l-3-3m3 3l3 3"></path></svg>
+      <img src=".\images\Square Arrow Up.svg" />
         <span class="text-gray-600 text-sm">100</span>
-        <svg class="w-4 h-4 text-gray-400 mr-2 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <img src=".\images\ArrowDown.svg" />
         <span class="text-gray-600 text-sm">13</span>
-        <svg class="w-4 h-4 text-gray-400 mr-2 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9 9 0 01-9-8 9 9 0 019-8z"></path></svg>
+        <img src=".\images\Chat Line.svg" />
         <span class="text-gray-600 text-sm">25</span>
       </div>
 
@@ -186,7 +153,7 @@ const MainContent = () => {
   </div>
 </div>
                 <div className="w-1/3">
-                <div className="bg-white p-4 rounded-md shadow-md  bg-gradient-to-r from-white-500 to-white-500">
+                <div className="bg-orange-100 p-4 rounded-md shadow-md  bg-gradient-to-r from-orange-100 to-orange-50">
                         
                         <div className="flex items-center">
                         <div className="relative inline-block">
@@ -203,6 +170,7 @@ const MainContent = () => {
                     </div>
                     <div className="bg-white p-4 rounded-md shadow-md mb-4">
                         <h3 className="text-lg font-semibold mb-2">Tags</h3>
+                        
                         <div className="flex flex-wrap">
                             <button className="mr-2 mb-2 px-4 py-2 bg-gray-200 rounded-full">Interview</button>
                             <button className="mr-2 mb-2 px-4 py-2 bg-gray-200 rounded-full">Strategy</button>

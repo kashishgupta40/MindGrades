@@ -8,16 +8,16 @@ const TopNavBar = () => {
     };
 
     return (
-        <div className="fixed top-0 left-32 right-0 bg-white text-black p-4 shadow-md z-10 flex items-center justify-between">
-            <h1 className="text-2xl font-bold font-Satoshi-Variable">Welcome Rahul!</h1>
-            <nav className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
+        <div className=" top-0 left-32 right-0 bg-white text-black p-4 px-24 shadow-md z-10 flex items-center justify-between">
+            <h1 className="text-2xl font-bold font-Satoshi-Variable p-2 left-5">Welcome Rahul!</h1>
+            <nav className="flex items-center space-x-8">
+                <div className="flex items-center space-x-4 border-2 border-spacing-2 border-red-300 rounded-full">
                     <img src=".\images\fire.png" alt="fire" className="w-6 h-6" />
                     <span>2</span>
                 </div>
-                <a href="#explore-community" className="hover:underline">Explore Community</a>
+                <a href="#explore-community" className="hover:underline border-2 border-blue-700 rounded-full text-blue-700">Explore Community</a>
                 <div className="relative">
-                    <button onClick={toggleDropdown} className="flex items-center space-x-1 hover:underline">
+                    <button onClick={toggleDropdown} className="flex items-center space-x-1 hover:underline bg-blue-700 text-white border-2 border-blue-700 rounded-full">
                         <span>Polity</span>
                         <svg className={`w-4 h-4 transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
